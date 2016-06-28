@@ -1,0 +1,30 @@
+
+<ion-view hide-nav-bar="true">
+  <ion-content id="fondo">
+
+  <br><br><br><br>
+      <h1 class="text-center color-h1">Login</h1>
+
+    <form>
+      
+      <div class="padding">
+      <div class="list">
+      <label class="item item-input item-floating-label">
+        <span class="input-label color-h1 ">Usuario</span>
+        <input style="color:#ffc600;" placeholder="usuario" type="email" ng-model="login.loginForm.email">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label color-h1">Password</span>
+        <input style="color:#ffc600; " placeholder="Password"  type="password" ng-model="login.loginForm.password">
+      </label>
+      </div>
+      <button ng-click="login.login()" class="button button-block color-header ">iniciar session</button>
+      </div> 
+    </form>
+
+
+  <p class="text-center color-h1 link">no tiene una cuenta?
+      <br><a ui-sref="create" class="button btn-crear">crear una</a>
+   </p>
+  </ion-content>
+</ion-view>

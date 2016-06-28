@@ -1,0 +1,208 @@
+#fondo{
+
+	background-image:url('../img/fondo-login.png');
+}
+
+
+.color-header{
+	
+	background-color:#f28c00;
+	color:white;
+}
+
+
+.color-i{
+	
+	color:#f28c00;
+}
+
+
+.color-texto{
+
+	color:#ffc600;
+}
+
+.color-h1{
+
+	color:white;
+
+
+}
+
+.division{
+
+	
+	color:white;
+	background-color:white;
+}
+
+.fondo-crear{
+
+	background-image:url('../img/bg_registro_new.png');
+}
+
+.border-image{
+
+	border-radius:30px;
+}
+
+.link{
+
+	font-size:12px;
+	color:white;
+}
+
+.btn-crear{
+	background-color:#00a2df;
+	color:white;
+}
+
+
+
+.error {
+	border-color:rgba(215, 20, 44, 0.5)!important;
+}
+
+.divide-campanias{
+
+	background-color:white;
+}
+
+.content-publi{
+
+
+
+	border-bottom-color:rgb(221, 221, 221) !important;
+	border-bottom-style:solid !important;
+	border-bottom-width: 1px !important;
+
+
+
+	border-top-color:rgb(221, 221, 221) !important;
+	border-top-style:solid !important;
+	border-top-width: 1px !important;
+
+	box-sizing:border-box !important;
+	color:rgb(68, 68, 68);
+	display:block !important;
+
+	font-feature-settings:normal !important;
+	font-kerning:auto !important;
+	font-language-override:normal !important;
+	font-size:16px !important;
+	font-size-adjust:normal !important;
+	font-stretch:normal !important;
+	font-style:normal !important;
+
+	line-height:20px !important;
+
+	margin-bottom: -1px !important;
+	margin-right: -1px !important;
+	margin-top: -1px !important;
+	margin-left: -1px !important;
+	overflow:hidden !important;
+	overflow-x:hidden !important;
+	overflow-y:hidden !important;
+
+}
+
+
+.border-img{
+
+	border:solid 1px #f28c00;
+	-moz-border-radius-topleft: 1px;
+	-moz-border-radius-topright:1px;
+	-moz-border-radius-bottomleft:1px;
+	-moz-border-radius-bottomright:1px;
+	-webkit-border-top-left-radius:1px;
+	-webkit-border-top-right-radius:1px;
+	-webkit-border-bottom-left-radius:1px;
+	-webkit-border-bottom-right-radius:1px;
+	border-top-left-radius:1px;
+	border-top-right-radius:1px;
+	border-bottom-left-radius:1px;
+	border-bottom-right-radius:1px;
+}
+
+progress {
+	background-color: #f3f3f3;
+	border: 0;
+	height: 18px;
+	border-radius: 9px;
+}
+
+
+
+/* Styling the determinate progress element */
+
+
+progress[value]::-webkit-progress-bar {
+	background-color: whiteSmoke;
+	border-radius: 3px;
+	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+}
+
+
+
+progress[value]::-webkit-progress-value {
+	position: relative;
+	background-color:#f28c00;
+	background-size: 35px 20px, 100% 100%, 100% 100%;
+	border-radius:3px;
+	animation: animate-stripes 5s linear infinite;
+}
+
+@keyframes animate-stripes { 100% { background-position: -100px 0; } }
+
+progress[value]::-webkit-progress-value:after {
+	
+	content: '';
+	position: absolute;
+	width:5px; height:5px;
+	top:7px; right:7px;
+	background-color: white;
+	border-radius: 100%;
+}
+
+progress[value]::-moz-progress-bar {
+	/* Gradient background with Stripes */
+	background-image:
+	-moz-linear-gradient( 135deg,
+		transparent,
+		transparent 33%,
+		rgba(0,0,0,.1) 33%,
+		rgba(0,0,0,.1) 66%,
+		transparent 66%),
+	-moz-linear-gradient( top,
+		rgba(255, 255, 255, .25),
+		rgba(0,0,0,.2)),
+	-moz-linear-gradient( left, #09c, #f44);
+	
+	background-size: 35px 20px, 100% 100%, 100% 100%;
+	border-radius:3px;
+
+
+}
+
+.progreso{
+
+	margin-top: -16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

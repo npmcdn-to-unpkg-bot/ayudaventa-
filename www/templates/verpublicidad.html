@@ -1,0 +1,19 @@
+<ion-view view-title="ver camapañas" sub-header="false">
+	
+	<ion-content >
+<div ng-controller="CtrlVerPublicidad">
+<ion-list >
+  <ion-item class="item-icon-left  content-publi" ng-repeat="publicidad in publicidad"
+  href="#/app/ver/publicidad/{{publicidad.id}}">
+   {{publicidad.nombre | uppercase}}
+   <i class="icon ion-android-settings color-i"></i>
+
+  </ion-item>
+</ion-list>
+</div>
+
+	
+	</ion-content>
+</ion-view>
+
+<ion-con

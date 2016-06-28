@@ -1,0 +1,178 @@
+
+</ion-content>
+
+<ion-view view-title="crear usuario">
+  <ion-content  class="fondo-crear">
+
+    <style>
+      input::-webkit-input-placeholder {
+        color: #FFFFFF;
+        font-weight: bold;
+      }
+      input::-moz-placeholder {
+        color:    #FFFFFF;
+        font-weight: bold;
+      }
+    </style>
+
+    <div ng-controller="CreateCtrl">
+      <br>
+      <h3 class=" text-center color-h1">A un paso mas de vender </h3>
+      <p class="text-center color-h1">registre su empresa o negocio gratis </p>
+      <br>
+      <form name="form">
+        <div class="padding">
+          <div class="item item-divider division">
+           <h2 class="text-center">Datos de su empresa </h2>
+         </div>
+         <br>
+
+         <div class="list">
+
+
+           <label class="item item-input item-select" ng-class="{ error: form.tipo.$error.required && !form.$pristine }">
+            <div class="input-label color-h1">
+              T.D
+            </div>
+            <select ng-model="data.tipo" name="tipo" required>
+             <option value="">seleccione</option>
+             <option value="CC">cedula</option>
+             <option value="NIT" >NIT</option>
+
+           </select>
+         </label>
+         
+         <label class="item item-input item-floating-label" ng-class="{ error: form.cedula.$error.required && !form.$pristine }">
+          <span class="input-label color-texto ">numero de documento</span>
+          <input name="cedula" style="color:white;" placeholder="numero de documento" type="text" ng-model="data.cedula" required>
+        </label>
+        
+
+
+        <label class="item item-input item-floating-label" ng-class="{ error: form.nombre.$error.required && !form.$pristine }">
+          <span class="input-label color-texto">nombre</span>
+          <input  name="nombre" style="color:white;" placeholder="nombre de empresa o usuario" class="color-h1" type="text" ng-model="data.nombre" min="3" required>
+        </label>
+        
+
+        
+
+        <br>
+        <label class="item item-input item-select" ng-class="{ error: form.actividad.$error.required && !form.$pristine }">
+          <div class="input-label color-h1">
+            A.economica
+          </div>
+          <select name="actividad" ng-model="data.actividad_id" class="form-control"  ng-options="actividad.id as actividad.nombre for actividad in JSONactividad" required>
+            <option value="">seleccione</option>
+          </select>
+        </label>
+        <br>
+        <label class="item item-input item-floating-label" ng-class="{ error: form.direccion.$error.required && !form.$pristine }" >
+          <span class="input-label color-texto">Direccion</span>
+          <input name="direccion" style="color:white; " placeholder="direccion" class="color-h1" type="text" ng-model="data.direccion" required>
+        </label>
+        
+
+
+        <br>
+        
+        <label class="item item-input item-select" ng-class="{ error: form.gremio.$error.required && !form.$pristine }">
+          <div class="input-label color-h1">
+            Gremios
+          </div>
+          <select name="gremio" ng-model="data.gremio_id" class="form-control"  ng-options="gremios.id as gremios.nombre for gremios in JSONgremios" required>
+            <option value="">seleccione</option>
+          </select>
+        </label>
+        
+        <br>
+        <div class="item item-divider division">
+         <h2 class="text-center">Ubicacion </h2>
+       </div>
+
+       <br>
+
+
+       <label class="item item-input item-select" ng-class="{ error: form.departamento.$error.required && !form.$pristine }">
+        <div class="input-label color-h1">
+          DPTO
+        </div>
+        <select name="departamento"  ng-model="data.departamento_id" class="form-control" ng-change="mostrarPistos()" 
+        ng-options="departamentos.id as departamentos.nombre for departamentos in JSONCategorias" required>
+        <option value="">seleccione</option>
+      </select>
+    </label>
+
+
+    <br>
+
+
+    <label class="item item-input item-select" ng-class="{ error: form.cuidad.$error.required && !form.$pristine }">
+      <div class="input-label color-h1">
+        Cuidad
+        <select name="cuidad" ng-model="data.cuidad_id" class="form-control" ng-options="cuidades.id as cuidades.nombre for cuidades in JSONPistos" required>
+          <option value="">seleccione</option>
+        </select> 
+      </div>
+
+    </label>
+
+
+    <br>
+    <div class="item item-divider division">
+      <h2 class="text-center">Contacto</h2>
+    </div>
+
+
+
+    <label class="item item-input item-floating-label" >
+      <span class="input-label color-texto">telefono</span>
+      <input style="color:white; " placeholder="telefono" class="color-h1" type="number" ng-model="data.telefono">
+    </label>
+
+
+    <label name="telefono" class="item item-input item-floating-label" ng-class="{ error: form.celular.$error.required && !form.$pristine }">
+      <span class="input-label color-texto">celular</span>
+      <input name="celular" style="color:white; " placeholder="celular" class="color-h1" type="number" ng-model="data.celular" required>
+    </label>
+
+
+    <label class="item item-input item-floating-label">
+      <span class="input-label color-texto">web de contacto</span>
+      <input style="color:white; " placeholder="web de contacto" class="color-h1" type="text" ng-model="data.web">
+    </label>
+
+    <label class="item item-input item-floating-label" ng-class="{ error: form.email.$error.required && !form.$pristine ,error: form.email.$error.email}">
+      <span class="input-label color-texto">email</span>
+      <input name="email" style="color:white; " placeholder="email" class="color-h1" type="email" ng-model="data.email" required>
+    </label>
+
+
+    <label class="item item-input item-floating-label" ng-class="{ error: form.password.$error.required && !form.$pristine }">
+      <span class="input-label color-texto">password</span>
+      <input name="password" style="color:white; " placeholder="password" class="color-h1" type="password" ng-model="data.password" ng-minlength="6" required>
+    </label>	
+    <span style="color:red"  ng-show="form.password.$error.minlength">
+        minimo 6 caracteres</span>	
+    <br>
+    <label class="item item-input item-floating-label">
+      <span class="input-label color-texto"> confirmar password</span>
+      <input name="myConfirmField" style="color:white;" placeholder="password" class="color-h1" ng-model="data.myConfirmField" type="password"  data-password-verify="data.password" required>
+    </label>  
+
+   <span style="color:red" ng-show="form.myConfirmField.$error.passwordVerify">
+        las contraseñas no coinciden</span>
+  <br>
+    <button ng-click="crear()" class="button button-block color-header" ng-disabled="!form.$valid">crear usuario</button>
+
+    
+
+
+  </div>
+</div>
+</form>
+
+
+</div>
+</ion-content>
+</ion-view>

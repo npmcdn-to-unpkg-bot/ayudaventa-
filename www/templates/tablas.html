@@ -1,0 +1,33 @@
+<ion-nav-bar  class="bar-assertive-900" ng-controller="CtrlMaster">
+   
+
+
+      <ion-nav-buttons side="left">
+                <button  class="button button-icon button-clear ion-home" ui-sref="app.index" menu-toggle="right">
+                </button>
+            </ion-nav-buttons>
+
+    </ion-nav-bar>
+
+
+	<ion-tabs class="tabs-positive color-header tabs-icon-top">
+
+	<ion-tab icon-on="ion-android-notifications" icon-off="ion-android-notifications" title="volante" href="#/tablas/notificacion" >
+
+	<ion-nav-view name="tab-home"></ion-nav-view>
+      		
+  	</ion-tab>
+
+  <ion-tab title="Chat"  icon-on="ion-chatbubble" icon-off="ion-chatbubble" href="#/tablas/chat" >
+    <ion-nav-view name="tab-chat"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Emial" icon-on="ion-email-unread" icon-off="ion-email-unread">
+    
+  </ion-tab>
+
+  <ion-tab title="Telefono" icon-on="ion-ios-telephone" icon-off="ion-ios-telephone">
+    
+  </ion-tab>
+
+</ion-tabs>

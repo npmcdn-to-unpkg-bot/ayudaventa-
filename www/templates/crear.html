@@ -1,0 +1,112 @@
+<ion-view view-title="crear campaña">
+	
+	<ion-content has-subheader="false">
+		<div ng-controller="CtrlPublicidad" class="padding" >
+
+			<form name="form" >
+				<div class="list">
+
+					<label class="item item-input item-floating-label" ng-class="{ error: form.nombre.$error.required && !form.$pristine }">
+						<span class="input-label">nombre</span>
+						<input  name="nombre"  ng-model="data.nombre" placeholder="nombre de la campaña"  type="text">
+					</label>
+					<br>
+					<br>
+					<div class="item-divider color-header">
+						<h4 style="color:white" class="text-center">Ubicacion</h4>
+					</div>
+					<br>
+					<label class="item item-input item-select" ng-class="{ error: form.departamento.$error.required && !form.$pristine }">
+						<div class="input-label ">
+							DPTO
+						</div>
+						<select name="departamento"  ng-model="data.departamento_id" class="form-control" ng-change="mostrarPistos()" 
+						ng-options="departamentos.id as departamentos.nombre for departamentos in JSONCategorias" required>
+						<option value="">seleccione</option>
+					</select>
+				</label>
+
+				<br>
+
+
+				<label class="item item-input item-select" ng-class="{ error: form.cuidad.$error.required && !form.$pristine }">
+					<div class="input-label ">
+						Cuidad
+						<select name="cuidad" ng-model="data.cuidad_id" class="form-control" ng-options="cuidades.id as cuidades.nombre for cuidades in JSONPistos" required>
+							<option value="">seleccione</option>
+						</select> 
+					</div>
+
+				</label>
+				<br>
+
+				<div class="item-divider color-header">
+					<h4 style="color:white" class="text-center">Tipo de Empresa</h4>
+				</div>
+				<br>
+				<label class="item item-input item-select" ng-class="{ error: form.actividad.$error.required && !form.$pristine }">
+					<div class="input-label">
+						A.economica
+					</div>
+					<select name="actividad" ng-model="data.actividad_id" class="form-control"  ng-options="actividad.id as actividad.nombre for actividad in JSONactividad" required>
+						<option value="">seleccione</option>
+					</select>
+				</label>
+
+				<label class="item item-input item-select">
+					<div class="input-label">
+						Tamaño
+					</div>
+					<select ng-model="data.tamano" name="tamaño" id="tamaño">
+						<option value="">seleccione</option>
+						<option value="micro">micro empresa</option>
+						<option value="pequeña">pequeña empresa</option>
+						<option value="mediana">mediana empresa</option>
+						<option value="grande">grande empresa</option>
+					</select>
+				</label>
+
+
+				<label class="item iteminput item-select">
+					<div class="input-label">Tiempo</div>
+					<select name="tiempo" name="tiempo" id="tiempo" ng-model="data.tiempo">
+						<option value="">seleccione</option>
+						<option value="recien">reciente</option>
+						<option value="menos2">menos de dos años</option>
+						<option value="mas2">mas de dos años</option>
+						<option value="mas1">mas de un año</option>
+					</select>
+				</label>
+
+				<div class="item item-input-inset">
+					<label class="item item-input-wrapper">
+						<input ng-model="data.cliente" type="text" placeholder="numero de clientes" ng-model="posicion">
+					</label>
+					<button class="button button-small" ng-click="getusuarios()" type="button">calcular</button>
+				</div>
+				<div style="display: none;">
+					{{data.precio = data.cliente * 100}}
+				</div>
+				<br>
+
+				<label class="item item-input item-floating-label" ng-class="{ error: form.nombre.$error.required && !form.$pristine }">
+						<span class="input-label">precio</span>
+						<input disabled name="precio" placeholder="precio"  type="text" ng-model="data.precio" required>
+					</label>
+
+						<button class="button button-block color-header" ng-click="guardar_publicidad()"  ng-disabled="!form.$valid">crear campaña</button>
+
+					
+				
+			</div>
+
+
+		</form>
+
+	
+	</div>
+
+
+
+</ion-content>
+</ion-view>

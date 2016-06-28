@@ -1,0 +1,62 @@
+<ion-view view-title="mi perfil">
+	<ion-content ng-class="{expanded:$scope.isExpanded}">
+	<div class="hero slide-up" style="background-image: url('img/imagen_fondo_perfil.png');">
+			<div class="content">
+				<div class="avatar" style="background-image: url('img/profiles.jpg');"></div>
+				<h3><a class="light" style="color:black">{{nombre}}</a></h3>
+				<h4 style="color:black">{{email}}</h4>
+			</div>
+		</div>
+
+		<ion-scroll zooming="true" direction="y">
+			<div ng-controller="PerfilCtrl">
+				<div class="padding">
+					<div class="list">
+
+
+
+						<br>
+						<label class="item item-input item-floating-label" ng-class="{ error: form.nombre.$error.required && !form.$pristine }">
+							<span class="input-label color-texto">nombre</span>
+							<input  name="nombre" placeholder="nombre de empresa o usuario" class="color-h1" type="text" ng-model="data.nombre" min="3" required>
+						</label>
+						<br>
+
+
+						<br>
+						<label class="item item-input item-floating-label" ng-class="{ error: form.direccion.$error.required && !form.$pristine }" >
+							<span class="input-label color-texto">Direccion</span>
+							<input name="direccion" placeholder="direccion" class="color-h1" type="text" ng-model="data.direccion" required>
+						</label>
+						<br>
+
+
+						<label class="item item-input item-floating-label" >
+							<span class="input-label color-texto">telefono</span>
+							<input string-to-number placeholder="telefono" class="color-h1" type="number" ng-model="data.telefono">
+						</label>
+
+
+						<label name="telefono" class="item item-input item-floating-label" ng-class="{ error: form.celular.$error.required && !form.$pristine }">
+							<span class="input-label color-texto">celular</span>
+							<input string-to-number name="celular" s placeholder="celular" class="color-h1" type="number" ng-model="data.celular" required>
+						</label>
+
+
+						<label class="item item-input item-floating-label">
+							<span class="input-label color-texto">web de contacto</span>
+							<input style="color:white; " placeholder="web de contacto" class="color-h1" type="text" ng-model="data.web">
+						</label>
+						<br>
+						<label class="item item-input item-floating-label" ng-class="{ error: form.email.$error.required && !form.$pristine ,error: form.email.$error.email}">
+							<span class="input-label color-texto">email</span>
+							<input name="email"  placeholder="email" class="color-h1" type="email" ng-model="data.email" required>
+						</label>
+
+					</div>
+				</div>
+			</div>
+		</ion-scroll>
+
+	</ion-content>
+</ion-view>

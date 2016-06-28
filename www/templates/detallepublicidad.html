@@ -1,0 +1,63 @@
+<ion-view view-title="detalle campaña">
+	
+	<ion-content has-subheader="false">
+		<div ng-controller="DetallepublicidadCtrl">
+			<div class="padding">
+
+				<div class="card">
+					<div class="item item-text-wrap">
+						<p><strong>Nombre de la campaña </strong> : {{publicidad.nombre}}</p>
+						<p><strong>Numeros de clientes</strong> : {{publicidad.cliente}}</p>
+						<p><strong>Precio de la publicidad</strong> : {{publicidad.precio | currency}}</p>
+						<p><strong>Email de contacto</strong>: {{email}}</p>
+						<p><strong>Celular de contacto</strong>: {{celular}}</p>
+						<p><strong>estado de la publicidad </strong>: {{volantes}} </p>
+						<p><strong>estado de pago</strong>: aun no ha echo pagos </p>
+						
+					</div>
+
+					
+				</div>
+				
+				<p class="text-center"><button ng-if="uploadvolante" ng-click="getPhoto('library')" class="button color-header">subir volante</button></p>
+
+				
+				
+				<div ng-if="photoReady " class="border-img">
+				<p class="text-center">
+					<img style="max-width:100%; padding: 5%;" src="{{photo}}">
+				</p>
+				</div>
+
+				<div ng-if="marcoimagen" class="border-img">
+				<p class="text-center">
+					<img style="max-width:100%; padding: 5%;" ng-src="https://api-guillospy92.c9users.io/public/storage/{{photos}}">
+				</p>
+				</div>
+				
+				
+
+
+				<progress  ng-if="progress" max="100" id="progressbar" value="{{ downloadProgress }}"> 
+				</progress>
+    			<div class="progreso" ng-if="progress" id="progressbarlabel">{{ downloadProgress }} % </div>
+				</div>
+				<div class="padding">
+				<p class="text-center">
+				<button class="button color-header" ng-click="uploadPhoto(photo)" ng-if="photoReady">
+						Subir volante al servidor
+					</button>
+				</p>
+
+				</div>
+
+
+
+				
+				
+				
+
+			
+		</div>
+	</ion-content>
+</ion-view>
